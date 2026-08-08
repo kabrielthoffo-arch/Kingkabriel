@@ -88,6 +88,35 @@
     border-radius:999px; padding:9px 14px; font-family:inherit; font-size:13px; outline:none; }
   .support-input button{ background:var(--gold); color:#0b0a08; border:none; border-radius:50%;
     width:38px; height:38px; cursor:pointer; font-size:16px; }
+  .flag{ position:absolute; top:8px; left:8px; display:flex; gap:6px; }
+  .flag span{ font-size:10px; background:var(--wine); color:#ffd9d9; border-radius:999px; padding:2px 8px; }
+  .flag span.low{ background:#5c2a1e; }
+  .thumb{ position:relative; }
+  .proof{ padding:6px 14px 0; font-size:11px; color:var(--gold-bright); letter-spacing:.2px; }
+  .promo-bar{ max-width:1200px; margin:16px auto 0; padding:10px 18px; text-align:center;
+    background:linear-gradient(90deg, rgba(201,162,74,.12), rgba(201,162,74,.22), rgba(201,162,74,.12));
+    border:1px solid rgba(201,162,74,.4); border-radius:12px; font-size:13px; color:var(--ivory); }
+  .promo-bar b{ color:var(--gold-bright); letter-spacing:1px; }
+  .lead-box{ max-width:1200px; margin:16px auto 0; padding:18px 20px; display:flex; align-items:center;
+    gap:16px; flex-wrap:wrap; background:linear-gradient(160deg, #171310 0%, #0f0d0a 100%);
+    border:1px solid var(--border); border-radius:14px; }
+  .lead-title{ font-family:'Cormorant Garamond', serif; font-size:19px; color:var(--gold-bright); }
+  .lead-sub{ font-size:12px; color:var(--muted); margin-top:2px; }
+  .lead-form{ display:flex; gap:8px; flex:1; min-width:240px; }
+  .lead-form input{ flex:1; background:var(--ink2); border:1px solid var(--border); color:var(--ivory);
+    border-radius:999px; padding:10px 16px; font-family:inherit; font-size:13px; outline:none; }
+  .lead-form input:focus{ border-color:var(--gold); }
+  .lead-form button{ background:var(--gold); color:#0b0a08; border:none; border-radius:999px;
+    padding:10px 22px; font-family:inherit; font-weight:700; cursor:pointer; letter-spacing:.5px; }
+  .lead-done{ font-size:13px; color:#7bc47f; }
+  .bundle-strip{ max-width:1200px; margin:10px auto 0; padding:0 20px 10px; }
+  .bundle-strip h2{ font-family:'Cormorant Garamond', serif; font-size:20px; color:var(--gold-bright); margin-bottom:8px; }
+  .bundle-cards{ display:flex; gap:10px; flex-wrap:wrap; }
+  .bundle-item{ background:var(--ink2); border:1px solid var(--border); border-radius:12px;
+    padding:10px 14px; font-size:12.5px; color:var(--ivory); }
+  .bundle-item .b-item{ color:var(--gold-bright); font-weight:600; }
+  .bundle-item .b-mates{ color:var(--muted); }
+  .bundle-item .b-save{ display:block; margin-top:4px; color:#7bc47f; font-size:11px; }
   @media (max-width:520px){ .verify{ font-size:10px; } }
 </style>
 </head>
@@ -109,22 +138,38 @@
   <h1>King Kabriel&#x27;s Empire — wellness self care</h1>
   <p class="sub">The full wellness self care supermarket · 2 trending right now · 12 products · fair prices · Built · Ruled · Owned</p>
 </div>
+<div class="promo-bar">🎁 <b>WELCOME10</b> — 10% off your first order · free returns · trusted by 12 shoppers</div>
 <div class="chips" id="chips">
   <button class="chip active" data-filter="all">All</button><button class='chip' data-filter='Other'>Other</button>
+</div>
+<div class="lead-box">
+  <div>
+    <div class="lead-title">Get 10% off your first order 💌</div>
+    <div class="lead-sub">Join the King Kabriel list — new drops, member-only deals, zero spam.</div>
+  </div>
+  <form class="lead-form" id="lead-form">
+    <input id="lead-email" type="email" required placeholder="you@email.com">
+    <button type="submit">Claim</button>
+  </form>
+  <div class="lead-done" id="lead-done" style="display:none">✅ You're in! Check your inbox for WELCOME10.</div>
 </div>
 <div class="shelf">
   <h2 class="hot">🔥 Trending in this store</h2>
   <div class="grid" id="trend-grid">
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Lavender+Dream+Essential+Oil+Diffuser" alt="Lavender Dream Essential Oil Diffuser"></div>
+        <div class='flag'>🔥 </div>
         <h3>Lavender Dream Essential Oil Diffuser</h3>
+        <div class="proof">★★★★☆ 4.8 · 62 reviews · 258 sold</div>
         <div class="blurb">Promote relaxation and serenity with our high-quality diffuser, featuring a sleek design a</div>
         <div class="tags"><span class='tag'>aromatherapy</span> <span class='tag'>relaxation</span> <span class='tag'>trending</span></div>
         <div class="foot"><span class="price">$59.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Wellness+Journal" alt="Wellness Journal"></div>
+        <div class='flag'>🔥 </div>
         <h3>Wellness Journal</h3>
+        <div class="proof">★★★★☆ 4.2 · 256 reviews · 284 sold</div>
         <div class="blurb">Reflect on your journey with our beautifully designed journal, guiding you towards a more </div>
         <div class="tags"><span class='tag'>mindfulness</span> <span class='tag'>reflection</span> <span class='tag'>trending</span></div>
         <div class="foot"><span class="price">$44.99</span><span class="add">Add to cart →</span></div>
@@ -135,74 +180,98 @@
     <div class="grid">
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Herbal+Tea+Blend+Subscription" alt="Herbal Tea Blend Subscription"></div>
+        
         <h3>Herbal Tea Blend Subscription</h3>
+        <div class="proof">★★★★☆ 4.4 · 346 reviews · 874 sold</div>
         <div class="blurb">Discover new flavors and benefits with our monthly tea subscription, featuring rare and or</div>
         <div class="tags"><span class='tag'>tea</span> <span class='tag'>subscription</span></div>
         <div class="foot"><span class="price">$69.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Heated+Massage+Cushion" alt="Heated Massage Cushion"></div>
+        
         <h3>Heated Massage Cushion</h3>
+        <div class="proof">★★★★☆ 4.7 · 375 reviews · 845 sold</div>
         <div class="blurb">Indulge in the ultimate relaxation experience with our heated massage cushion, perfect for</div>
         <div class="tags"><span class='tag'>massage</span> <span class='tag'>relaxation</span></div>
         <div class="foot"><span class="price">$89.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Mini+Aromatherapy+Kit" alt="Mini Aromatherapy Kit"></div>
+        
         <h3>Mini Aromatherapy Kit</h3>
+        <div class="proof">★★★★☆ 4.4 · 366 reviews · 914 sold</div>
         <div class="blurb">Introduction to the world of aromatherapy, featuring a selection of essential oils and a c</div>
         <div class="tags"><span class='tag'>aromatherapy</span> <span class='tag'>starter kit</span></div>
         <div class="foot"><span class="price">$19.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Face+Mask+Set" alt="Face Mask Set"></div>
+        <div class='flag'> <span class='low'>Only 6 left</span></div>
         <h3>Face Mask Set</h3>
+        <div class="proof">★★★★☆ 4.9 · 109 reviews · 611 sold</div>
         <div class="blurb">Pamper yourself with our assortment of face masks, each addressing a different skin concer</div>
         <div class="tags"><span class='tag'>skincare</span> <span class='tag'>face masks</span></div>
         <div class="foot"><span class="price">$24.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Meditation+Guide" alt="Meditation Guide"></div>
+        
         <h3>Meditation Guide</h3>
+        <div class="proof">★★★★☆ 4.6 · 408 reviews · 652 sold</div>
         <div class="blurb">Begin your meditation practice with our comprehensive guide, featuring techniques and tips</div>
         <div class="tags"><span class='tag'>meditation</span> <span class='tag'>mindfulness</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Herbal+Tea+Sampler" alt="Herbal Tea Sampler"></div>
+        
         <h3>Herbal Tea Sampler</h3>
+        <div class="proof">★★★★☆ 4.6 · 160 reviews · 960 sold</div>
         <div class="blurb">Explore the world of herbal teas with our curated sampler, featuring a variety of flavors </div>
         <div class="tags"><span class='tag'>tea</span> <span class='tag'>herbal</span></div>
         <div class="foot"><span class="price">$34.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Yoga+Mat" alt="Yoga Mat"></div>
+        <div class='flag'> <span class='low'>Only 5 left</span></div>
         <h3>Yoga Mat</h3>
+        <div class="proof">★★★★☆ 4.4 · 494 reviews · 986 sold</div>
         <div class="blurb">Elevate your yoga practice with our high-quality, eco-friendly mat, designed for comfort a</div>
         <div class="tags"><span class='tag'>yoga</span> <span class='tag'>fitness</span></div>
         <div class="foot"><span class="price">$39.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Wellness+Tracker" alt="Wellness Tracker"></div>
+        <div class='flag'> <span class='low'>Only 4 left</span></div>
         <h3>Wellness Tracker</h3>
+        <div class="proof">★★★★☆ 4.3 · 151 reviews · 89 sold</div>
         <div class="blurb">Monitor your progress and stay motivated with our sleek and user-friendly wellness tracker</div>
         <div class="tags"><span class='tag'>fitness</span> <span class='tag'>tracking</span></div>
         <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Self+Care+Planner" alt="Self-Care Planner"></div>
+        
         <h3>Self-Care Planner</h3>
+        <div class="proof">★★★★☆ 4.4 · 450 reviews · 730 sold</div>
         <div class="blurb">Organize your self-care routine with our beautifully designed planner, featuring prompts a</div>
         <div class="tags"><span class='tag'>planner</span> <span class='tag'>self-care</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Aromatherapy+Necklace" alt="Aromatherapy Necklace"></div>
+        
         <h3>Aromatherapy Necklace</h3>
+        <div class="proof">★★★★☆ 4.5 · 361 reviews · 819 sold</div>
         <div class="blurb">Wear your wellness on your sleeve with our stylish aromatherapy necklace, featuring interc</div>
         <div class="tags"><span class='tag'>aromatherapy</span> <span class='tag'>accessories</span></div>
         <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
       </div></div></div>
+<div class="bundle-strip" id="bundle-strip">
+  <h2>🛍️ Complete the look — frequently bundled</h2>
+  <div class="bundle-cards"><div class='bundle-item'><span class='b-item'>Lavender Dream Essential Oil Diffuser</span> + <span class='b-mates'>Wellness Journal + Herbal Tea Blend Subscription</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>Wellness Journal</span> + <span class='b-mates'>Lavender Dream Essential Oil Diffuser + Herbal Tea Blend Subscription</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>Herbal Tea Blend Subscription</span> + <span class='b-mates'>Lavender Dream Essential Oil Diffuser + Wellness Journal</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>Heated Massage Cushion</span> + <span class='b-mates'>Lavender Dream Essential Oil Diffuser + Wellness Journal</span> <span class='b-save'>bundle save 10%</span></div></div>
+</div>
 <div class="empty" id="empty">No products match your search. Try another word — or message us, we'll find it for you.</div>
 <footer>Built · Ruled · Owned · Official King Kabriel's Empire store · &copy; King Kabriel's Empire</footer>
 
@@ -245,6 +314,24 @@
       apply();
     });
   });
+  // Lead capture — saves locally, pushes to the bot when the dashboard is reachable.
+  var leadForm = document.getElementById('lead-form');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var email = document.getElementById('lead-email').value.trim();
+      if (!email) return;
+      try { localStorage.setItem('kk-lead-' + email, new Date().toISOString()); } catch(e) {}
+      document.getElementById('lead-done').style.display = 'block';
+      leadForm.style.display = 'none';
+      fetch('http://localhost:8050/lead', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'email=' + encodeURIComponent(email) + '&store=' + encodeURIComponent('wellness self care'),
+      }).catch(function(){});
+    });
+  }
+
   // WhatsApp-style support chat — self-contained; stores history locally.
   var msgs = document.getElementById('smsgs');
   var input = document.getElementById('sinput');
