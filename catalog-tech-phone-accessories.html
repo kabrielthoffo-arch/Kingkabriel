@@ -88,6 +88,35 @@
     border-radius:999px; padding:9px 14px; font-family:inherit; font-size:13px; outline:none; }
   .support-input button{ background:var(--gold); color:#0b0a08; border:none; border-radius:50%;
     width:38px; height:38px; cursor:pointer; font-size:16px; }
+  .flag{ position:absolute; top:8px; left:8px; display:flex; gap:6px; }
+  .flag span{ font-size:10px; background:var(--wine); color:#ffd9d9; border-radius:999px; padding:2px 8px; }
+  .flag span.low{ background:#5c2a1e; }
+  .thumb{ position:relative; }
+  .proof{ padding:6px 14px 0; font-size:11px; color:var(--gold-bright); letter-spacing:.2px; }
+  .promo-bar{ max-width:1200px; margin:16px auto 0; padding:10px 18px; text-align:center;
+    background:linear-gradient(90deg, rgba(201,162,74,.12), rgba(201,162,74,.22), rgba(201,162,74,.12));
+    border:1px solid rgba(201,162,74,.4); border-radius:12px; font-size:13px; color:var(--ivory); }
+  .promo-bar b{ color:var(--gold-bright); letter-spacing:1px; }
+  .lead-box{ max-width:1200px; margin:16px auto 0; padding:18px 20px; display:flex; align-items:center;
+    gap:16px; flex-wrap:wrap; background:linear-gradient(160deg, #171310 0%, #0f0d0a 100%);
+    border:1px solid var(--border); border-radius:14px; }
+  .lead-title{ font-family:'Cormorant Garamond', serif; font-size:19px; color:var(--gold-bright); }
+  .lead-sub{ font-size:12px; color:var(--muted); margin-top:2px; }
+  .lead-form{ display:flex; gap:8px; flex:1; min-width:240px; }
+  .lead-form input{ flex:1; background:var(--ink2); border:1px solid var(--border); color:var(--ivory);
+    border-radius:999px; padding:10px 16px; font-family:inherit; font-size:13px; outline:none; }
+  .lead-form input:focus{ border-color:var(--gold); }
+  .lead-form button{ background:var(--gold); color:#0b0a08; border:none; border-radius:999px;
+    padding:10px 22px; font-family:inherit; font-weight:700; cursor:pointer; letter-spacing:.5px; }
+  .lead-done{ font-size:13px; color:#7bc47f; }
+  .bundle-strip{ max-width:1200px; margin:10px auto 0; padding:0 20px 10px; }
+  .bundle-strip h2{ font-family:'Cormorant Garamond', serif; font-size:20px; color:var(--gold-bright); margin-bottom:8px; }
+  .bundle-cards{ display:flex; gap:10px; flex-wrap:wrap; }
+  .bundle-item{ background:var(--ink2); border:1px solid var(--border); border-radius:12px;
+    padding:10px 14px; font-size:12.5px; color:var(--ivory); }
+  .bundle-item .b-item{ color:var(--gold-bright); font-weight:600; }
+  .bundle-item .b-mates{ color:var(--muted); }
+  .bundle-item .b-save{ display:block; margin-top:4px; color:#7bc47f; font-size:11px; }
   @media (max-width:520px){ .verify{ font-size:10px; } }
 </style>
 </head>
@@ -109,22 +138,38 @@
   <h1>King Kabriel&#x27;s Empire — tech phone accessories</h1>
   <p class="sub">The full tech phone accessories supermarket · 2 trending right now · 12 products · fair prices · Built · Ruled · Owned</p>
 </div>
+<div class="promo-bar">🎁 <b>WELCOME10</b> — 10% off your first order · free returns · trusted by 12 shoppers</div>
 <div class="chips" id="chips">
   <button class="chip active" data-filter="all">All</button><button class='chip' data-filter='Other'>Other</button>
+</div>
+<div class="lead-box">
+  <div>
+    <div class="lead-title">Get 10% off your first order 💌</div>
+    <div class="lead-sub">Join the King Kabriel list — new drops, member-only deals, zero spam.</div>
+  </div>
+  <form class="lead-form" id="lead-form">
+    <input id="lead-email" type="email" required placeholder="you@email.com">
+    <button type="submit">Claim</button>
+  </form>
+  <div class="lead-done" id="lead-done" style="display:none">✅ You're in! Check your inbox for WELCOME10.</div>
 </div>
 <div class="shelf">
   <h2 class="hot">🔥 Trending in this store</h2>
   <div class="grid" id="trend-grid">
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=AeroCase" alt="AeroCase"></div>
+        <div class='flag'>🔥 <span class='low'>Only 8 left</span></div>
         <h3>AeroCase</h3>
+        <div class="proof">★★★★☆ 4.5 · 377 reviews · 683 sold</div>
         <div class="blurb">Protect your phone with our sleek and durable aerodynamic case, designed for the modern us</div>
         <div class="tags"><span class='tag'>phone case</span> <span class='tag'>protection</span> <span class='tag'>trending</span></div>
         <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=PowerPlus" alt="PowerPlus"></div>
+        <div class='flag'>🔥 </div>
         <h3>PowerPlus</h3>
+        <div class="proof">★★★★☆ 4.3 · 215 reviews · 125 sold</div>
         <div class="blurb">Stay charged on-the-go with our high-capacity power bank, featuring advanced safety featur</div>
         <div class="tags"><span class='tag'>power bank</span> <span class='tag'>portable charger</span> <span class='tag'>trending</span></div>
         <div class="foot"><span class="price">$59.99</span><span class="add">Add to cart →</span></div>
@@ -135,74 +180,98 @@
     <div class="grid">
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=SoundWave" alt="SoundWave"></div>
+        <div class='flag'> <span class='low'>Only 3 left</span></div>
         <h3>SoundWave</h3>
+        <div class="proof">★★★★☆ 4.6 · 68 reviews · 792 sold</div>
         <div class="blurb">Immerse yourself in crystal-clear sound with our wireless earbuds, designed for seamless m</div>
         <div class="tags"><span class='tag'>wireless earbuds</span> <span class='tag'>audio</span></div>
         <div class="foot"><span class="price">$69.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=ScreenGuard" alt="ScreenGuard"></div>
+        
         <h3>ScreenGuard</h3>
+        <div class="proof">★★★★☆ 4.5 · 429 reviews · 351 sold</div>
         <div class="blurb">Safeguard your phone&#x27;s screen with our ultra-thin and responsive tempered glass screen pro</div>
         <div class="tags"><span class='tag'>screen protector</span> <span class='tag'>phone accessories</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=FunCase" alt="FunCase"></div>
+        
         <h3>FunCase</h3>
+        <div class="proof">★★★★☆ 4.7 · 179 reviews · 401 sold</div>
         <div class="blurb">Add some fun to your phone with our colorful and playful cases, available in various desig</div>
         <div class="tags"><span class='tag'>phone case</span> <span class='tag'>fun</span></div>
         <div class="foot"><span class="price">$19.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=MiniCharger" alt="MiniCharger"></div>
+        
         <h3>MiniCharger</h3>
+        <div class="proof">★★★★☆ 4.3 · 359 reviews · 221 sold</div>
         <div class="blurb">Charge your phone on-the-go with our compact and portable mini charger</div>
         <div class="tags"><span class='tag'>portable charger</span> <span class='tag'>travel</span></div>
         <div class="foot"><span class="price">$24.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=BuddyBuds" alt="BuddyBuds"></div>
+        <div class='flag'> <span class='low'>Only 3 left</span></div>
         <h3>BuddyBuds</h3>
+        <div class="proof">★★★★☆ 4.8 · 374 reviews · 506 sold</div>
         <div class="blurb">Enjoy great sound with our affordable and easy-to-use earbuds, perfect for music and calls</div>
         <div class="tags"><span class='tag'>earbuds</span> <span class='tag'>audio</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=QuickCable" alt="QuickCable"></div>
+        
         <h3>QuickCable</h3>
+        <div class="proof">★★★★☆ 4.6 · 460 reviews · 580 sold</div>
         <div class="blurb">Sync and charge your phone with our high-quality and durable quick charge cable</div>
         <div class="tags"><span class='tag'>charging cable</span> <span class='tag'>accessories</span></div>
         <div class="foot"><span class="price">$14.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=MindfulBand" alt="MindfulBand"></div>
+        <div class='flag'> <span class='low'>Only 7 left</span></div>
         <h3>MindfulBand</h3>
+        <div class="proof">★★★★☆ 4.6 · 324 reviews · 156 sold</div>
         <div class="blurb">Track your fitness and wellness goals with our stylish and functional fitness tracker band</div>
         <div class="tags"><span class='tag'>fitness tracker</span> <span class='tag'>wellness</span></div>
         <div class="foot"><span class="price">$39.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=CreativeKit" alt="CreativeKit"></div>
+        
         <h3>CreativeKit</h3>
+        <div class="proof">★★★★☆ 4.5 · 485 reviews · 455 sold</div>
         <div class="blurb">Unleash your creativity with our mobile photography kit, featuring a range of lenses and a</div>
         <div class="tags"><span class='tag'>mobile photography</span> <span class='tag'>creativity</span></div>
         <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=ProductivityPad" alt="ProductivityPad"></div>
+        
         <h3>ProductivityPad</h3>
+        <div class="proof">★★★★☆ 4.5 · 53 reviews · 847 sold</div>
         <div class="blurb">Stay organized and focused with our wireless charging pad and built-in phone stand</div>
         <div class="tags"><span class='tag'>wireless charging</span> <span class='tag'>productivity</span></div>
         <div class="foot"><span class="price">$59.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=SleepSavvy" alt="SleepSavvy"></div>
+        
         <h3>SleepSavvy</h3>
+        <div class="proof">★★★★☆ 4.4 · 434 reviews · 446 sold</div>
         <div class="blurb">Improve your sleep with our blue light filtering phone screen protector, designed for a he</div>
         <div class="tags"><span class='tag'>screen protector</span> <span class='tag'>sleep</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div></div></div>
+<div class="bundle-strip" id="bundle-strip">
+  <h2>🛍️ Complete the look — frequently bundled</h2>
+  <div class="bundle-cards"><div class='bundle-item'><span class='b-item'>AeroCase</span> + <span class='b-mates'>PowerPlus + SoundWave</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>PowerPlus</span> + <span class='b-mates'>AeroCase + SoundWave</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>SoundWave</span> + <span class='b-mates'>AeroCase + PowerPlus</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>ScreenGuard</span> + <span class='b-mates'>AeroCase + PowerPlus</span> <span class='b-save'>bundle save 10%</span></div></div>
+</div>
 <div class="empty" id="empty">No products match your search. Try another word — or message us, we'll find it for you.</div>
 <footer>Built · Ruled · Owned · Official King Kabriel's Empire store · &copy; King Kabriel's Empire</footer>
 
@@ -245,6 +314,24 @@
       apply();
     });
   });
+  // Lead capture — saves locally, pushes to the bot when the dashboard is reachable.
+  var leadForm = document.getElementById('lead-form');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var email = document.getElementById('lead-email').value.trim();
+      if (!email) return;
+      try { localStorage.setItem('kk-lead-' + email, new Date().toISOString()); } catch(e) {}
+      document.getElementById('lead-done').style.display = 'block';
+      leadForm.style.display = 'none';
+      fetch('http://localhost:8050/lead', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'email=' + encodeURIComponent(email) + '&store=' + encodeURIComponent('tech phone accessories'),
+      }).catch(function(){});
+    });
+  }
+
   // WhatsApp-style support chat — self-contained; stores history locally.
   var msgs = document.getElementById('smsgs');
   var input = document.getElementById('sinput');
