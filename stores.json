@@ -1,0 +1,47 @@
+[
+  {
+    "n": 1,
+    "niche": "dresses/outfits",
+    "label": "Fashion",
+    "emoji": "👗",
+    "connected": false,
+    "url": "",
+    "products": 4
+  },
+  {
+    "n": 2,
+    "niche": "home/kitchen gadgets",
+    "label": "Kitchen",
+    "emoji": "🍳",
+    "connected": false,
+    "url": "",
+    "products": 4
+  },
+  {
+    "n": 3,
+    "niche": "cosmetics and skin care",
+    "label": "Cosmetics & Skin Care",
+    "emoji": "✨",
+    "connected": false,
+    "url": "",
+    "products": 4
+  },
+  {
+    "n": 4,
+    "niche": "wellness/self-care",
+    "label": "Wellness",
+    "emoji": "🌿",
+    "connected": false,
+    "url": "",
+    "products": 4
+  },
+  {
+    "n": 5,
+    "niche": "tech/phone accessories",
+    "label": "Tech & Phone Accessories",
+    "emoji": "📱",
+    "connected": false,
+    "url": "",
+    "products": 4
+  }
+]
