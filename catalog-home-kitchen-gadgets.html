@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0a08">
+<title>King Kabriel&#x27;s Empire — home kitchen gadgets</title>
+<meta name="description" content="Shop the full home kitchen gadgets collection at King Kabriel&#x27;s Empire. Trending picks, every category, fair prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cinzel:wght@500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#0b0a08; --ink2:#171310; --gold:#c9a24a; --gold-bright:#e8c877;
+    --gold-dim:#8a6c2f; --ivory:#f1e6cc; --wine:#3a0f12; --muted:#a99f8b;
+    --panel:#14100c; --border:rgba(201,162,74,0.25);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:radial-gradient(ellipse at 50% 0%, #1c1712 0%, var(--ink) 55%, #050403 100%);
+    color:var(--ivory); font-family:'Jost', sans-serif; min-height:100%; }
+  .top{ position:sticky; top:0; z-index:50; background:rgba(11,10,8,0.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border); padding:14px 20px; }
+  .top-inner{ max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .back{ font-size:12px; color:var(--muted); text-decoration:none; letter-spacing:.3px;
+    border:1px solid var(--border); border-radius:999px; padding:6px 12px; white-space:nowrap; }
+  .back:hover{ color:var(--ivory); border-color:var(--gold); }
+  .brand{ font-family:'Cinzel', serif; font-size:15px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--gold-bright); white-space:nowrap; }
+  .search{ flex:1; min-width:200px; }
+  .search input{ width:100%; background:var(--ink2); border:1px solid var(--border); color:var(--ivory);
+    border-radius:999px; padding:10px 18px; font-family:inherit; font-size:14px; outline:none; }
+  .search input:focus{ border-color:var(--gold); }
+  .verify{ font-size:11.5px; color:#7bc47f; border:1px solid rgba(123,196,127,.4); border-radius:999px;
+    padding:6px 12px; white-space:nowrap; letter-spacing:.4px; }
+  .verify b{ font-weight:700; }
+  .hero{ max-width:1200px; margin:0 auto; padding:46px 20px 10px; text-align:center; }
+  .crown{ width:46px; margin:0 auto 12px; display:block; filter:drop-shadow(0 0 16px rgba(201,162,74,.35)); }
+  h1{ font-family:'Cormorant Garamond', serif; font-weight:600; font-size:clamp(30px, 6vw, 46px);
+    letter-spacing:.01em; text-transform:uppercase; }
+  .sub{ color:var(--muted); font-size:14px; margin-top:8px; }
+  .chips{ max-width:1200px; margin:22px auto 6px; padding:0 20px; display:flex; gap:8px; flex-wrap:wrap; }
+  .chip{ background:var(--ink2); color:var(--muted); border:1px solid var(--border); border-radius:999px;
+    padding:7px 14px; font-family:inherit; font-size:12.5px; cursor:pointer; transition:all .15s; }
+  .chip:hover{ color:var(--ivory); border-color:var(--gold); }
+  .chip.active{ background:var(--gold); color:#0b0a08; border-color:var(--gold); font-weight:600; }
+  .shelf{ max-width:1200px; margin:0 auto; padding:18px 20px 8px; }
+  .shelf h2{ font-family:'Cormorant Garamond', serif; font-size:22px; color:var(--gold-bright); }
+  .shelf .hot{ color:#ffb3a1; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:18px; padding:14px 0 26px; }
+  .card{ background:linear-gradient(160deg, #171310 0%, #0f0d0a 100%); border:1px solid var(--border);
+    border-radius:14px; overflow:hidden; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+  .card:hover{ transform:translateY(-3px); border-color:var(--gold); box-shadow:0 10px 28px rgba(201,162,74,.15); }
+  .thumb{ height:170px; background:var(--ink2); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .thumb img{ width:100%; height:100%; object-fit:cover; }
+  .card h3{ padding:12px 14px 2px; font-size:15.5px; color:var(--ivory); }
+  .card .blurb{ padding:0 14px; font-size:12px; color:var(--muted); min-height:34px; }
+  .tags{ padding:6px 14px 0; }
+  .tag{ display:inline-block; font-size:10px; background:rgba(201,162,74,.14); color:var(--gold-dim);
+    border-radius:999px; padding:2px 8px; margin:0 4px 2px 0; letter-spacing:.3px; text-transform:uppercase; }
+  .foot{ display:flex; justify-content:space-between; align-items:center; padding:10px 14px 14px; }
+  .price{ font-weight:800; color:var(--gold-bright); font-size:16px; }
+  .add{ font-size:11px; color:var(--muted); letter-spacing:.5px; text-transform:uppercase; }
+  .cat-head{ max-width:1200px; margin:26px auto 4px; padding:0 20px; font-family:'Cormorant Garamond', serif;
+    font-size:21px; color:var(--gold-bright); }
+  .cat-head .cnt{ color:var(--gold-dim); font-size:13px; margin-left:8px; }
+  .empty{ text-align:center; color:var(--muted); padding:60px 20px; font-size:15px; display:none; }
+  footer{ text-align:center; padding:34px 20px; color:var(--gold-dim); font-size:11px;
+    letter-spacing:.2em; text-transform:uppercase; }
+  /* ---- support chat button (WhatsApp-style) ---- */
+  .support-btn{ position:fixed; bottom:20px; right:20px; width:56px; height:56px; border-radius:50%;
+    background:#25D366; border:none; cursor:pointer; font-size:26px; color:#fff;
+    box-shadow:0 4px 18px rgba(37,211,102,.4); z-index:999; transition:transform .15s; }
+  .support-btn:hover{ transform:scale(1.08); }
+  .support-panel{ position:fixed; bottom:88px; right:20px; width:min(340px, 86vw); max-height:70vh;
+    background:#0e0c09; border:1px solid var(--border); border-radius:16px; overflow:hidden;
+    display:none; flex-direction:column; box-shadow:0 18px 50px rgba(0,0,0,.6); z-index:999; }
+  .support-panel.open{ display:flex; }
+  .support-head{ background:var(--ink2); padding:12px 16px; font-size:13.5px; color:var(--gold-bright);
+    border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+  .support-head .ava{ width:30px; height:30px; border-radius:50%; background:var(--gold); color:#0b0a08;
+    display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; }
+  .support-msgs{ flex:1; overflow-y:auto; padding:12px; display:flex; flex-direction:column; gap:8px; min-height:180px; }
+  .msg{ max-width:82%; padding:8px 12px; border-radius:14px; font-size:13px; line-height:1.45; }
+  .msg.them{ background:#1f1a14; color:var(--ivory); align-self:flex-start; border-bottom-left-radius:4px; }
+  .msg.me{ background:var(--gold); color:#0b0a08; align-self:flex-end; border-bottom-right-radius:4px; }
+  .support-input{ display:flex; gap:8px; padding:10px; border-top:1px solid var(--border); }
+  .support-input input{ flex:1; background:var(--ink2); border:1px solid var(--border); color:var(--ivory);
+    border-radius:999px; padding:9px 14px; font-family:inherit; font-size:13px; outline:none; }
+  .support-input button{ background:var(--gold); color:#0b0a08; border:none; border-radius:50%;
+    width:38px; height:38px; cursor:pointer; font-size:16px; }
+  @media (max-width:520px){ .verify{ font-size:10px; } }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="top-inner">
+    <a class="back" href="index.html">← Back to Empire</a>
+    <div class="brand">👑 King Kabriel&#x27;s Empire</div>
+    <div class="search"><input id="q" type="search" placeholder="Search this store… (e.g. serum, dress, charger)" autocomplete="off"></div>
+    <div class="verify">✅ Official <b>King Kabriel&#x27;s Empire</b> store — verified · ID: KK-HOME-K</div>
+  </div>
+</div>
+<div class="hero">
+  <svg class="crown" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 58 L4 22 L26 38 L37 12 L50 30 L63 12 L74 38 L96 22 L92 58 Z" fill="none" stroke="#c9a24a" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="4" cy="18" r="4" fill="#e8c877"/><circle cx="50" cy="8" r="4.5" fill="#e8c877"/><circle cx="96" cy="18" r="4" fill="#e8c877"/>
+    <rect x="8" y="58" width="84" height="7" fill="none" stroke="#c9a24a" stroke-width="2.4"/>
+  </svg>
+  <h1>King Kabriel&#x27;s Empire — home kitchen gadgets</h1>
+  <p class="sub">The full home kitchen gadgets supermarket · 2 trending right now · 12 products · fair prices · Built · Ruled · Owned</p>
+</div>
+<div class="chips" id="chips">
+  <button class="chip active" data-filter="all">All</button><button class='chip' data-filter='Other'>Other</button>
+</div>
+<div class="shelf">
+  <h2 class="hot">🔥 Trending in this store</h2>
+  <div class="grid" id="trend-grid">
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Smart+Slow+Cooker" alt="Smart Slow Cooker"></div>
+        <h3>Smart Slow Cooker</h3>
+        <div class="blurb">Cook perfect meals with ease and precision, featuring a large 6-quart capacity and digital</div>
+        <div class="tags"><span class='tag'>slow cooking</span> <span class='tag'>digital controls</span> <span class='tag'>trending</span></div>
+        <div class="foot"><span class="price">$69.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Automatic+Pan+Stirrer" alt="Automatic Pan Stirrer"></div>
+        <h3>Automatic Pan Stirrer</h3>
+        <div class="blurb">Stir and sautÃ© with ease, reducing cooking time and effort with our innovative automatic </div>
+        <div class="tags"><span class='tag'>stirring</span> <span class='tag'>sautÃ©ing</span> <span class='tag'>trending</span></div>
+        <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
+      </div></div>
+</div>
+<div id="cats">
+    <h2 class="cat-head" id="cat-other">🛒 Other <span class="cnt">10</span></h2>
+    <div class="grid">
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Instant+Read+Thermometer" alt="Instant Read Thermometer"></div>
+        <h3>Instant Read Thermometer</h3>
+        <div class="blurb">Achieve perfect doneness every time, with our fast and accurate instant read thermometer</div>
+        <div class="tags"><span class='tag'>temperature control</span> <span class='tag'>food safety</span></div>
+        <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Stand+Mixer+with+Glass+Bowl" alt="Stand Mixer with Glass Bowl"></div>
+        <h3>Stand Mixer with Glass Bowl</h3>
+        <div class="blurb">Mix, knead, and whip with ease, featuring a powerful 500-watt motor and durable glass bowl</div>
+        <div class="tags"><span class='tag'>mixing</span> <span class='tag'>baking</span></div>
+        <div class="foot"><span class="price">$89.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=One+Touch+Can+Opener" alt="One-Touch Can Opener"></div>
+        <h3>One-Touch Can Opener</h3>
+        <div class="blurb">Open cans with ease, featuring a simple one-touch design and compact size</div>
+        <div class="tags"><span class='tag'>can opening</span> <span class='tag'>kitchen essentials</span></div>
+        <div class="foot"><span class="price">$19.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Silicone+Spatula+Set" alt="Silicone Spatula Set"></div>
+        <h3>Silicone Spatula Set</h3>
+        <div class="blurb">Heat-resistant and non-stick, our silicone spatula set is perfect for scraping the sides o</div>
+        <div class="tags"><span class='tag'>spatulas</span> <span class='tag'>baking</span></div>
+        <div class="foot"><span class="price">$14.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Automatic+Egg+Slicer" alt="Automatic Egg Slicer"></div>
+        <h3>Automatic Egg Slicer</h3>
+        <div class="blurb">Slice eggs with ease, featuring a compact design and adjustable slicing thickness</div>
+        <div class="tags"><span class='tag'>egg slicing</span> <span class='tag'>breakfast</span></div>
+        <div class="foot"><span class="price">$24.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Collapsible+Colander" alt="Collapsible Colander"></div>
+        <h3>Collapsible Colander</h3>
+        <div class="blurb">Drain pasta and vegetables with ease, featuring a compact collapsible design and easy-to-c</div>
+        <div class="tags"><span class='tag'>colander</span> <span class='tag'>kitchen storage</span></div>
+        <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Bamboo+Cutting+Board" alt="Bamboo Cutting Board"></div>
+        <h3>Bamboo Cutting Board</h3>
+        <div class="blurb">Durable and eco-friendly, our bamboo cutting board is perfect for food preparation and ser</div>
+        <div class="tags"><span class='tag'>cutting boards</span> <span class='tag'>sustainable</span></div>
+        <div class="foot"><span class="price">$39.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Glass+Food+Storage+Containers" alt="Glass Food Storage Containers"></div>
+        <h3>Glass Food Storage Containers</h3>
+        <div class="blurb">Store food with ease, featuring a set of 5 glass containers with lids and a compact design</div>
+        <div class="tags"><span class='tag'>food storage</span> <span class='tag'>glass containers</span></div>
+        <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Manual+Food+Chopper" alt="Manual Food Chopper"></div>
+        <h3>Manual Food Chopper</h3>
+        <div class="blurb">Chop ingredients with ease, featuring a manual design and compact size</div>
+        <div class="tags"><span class='tag'>food chopper</span> <span class='tag'>manual</span></div>
+        <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
+      </div>
+      <div class="card" data-cat="Other">
+        <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Reusable+Beeswax+Wraps" alt="Reusable Beeswax Wraps"></div>
+        <h3>Reusable Beeswax Wraps</h3>
+        <div class="blurb">Replace plastic wrap with our reusable beeswax wraps, featuring a set of 3 wraps in variou</div>
+        <div class="tags"><span class='tag'>beeswax wraps</span> <span class='tag'>reusable</span></div>
+        <div class="foot"><span class="price">$34.99</span><span class="add">Add to cart →</span></div>
+      </div></div></div>
+<div class="empty" id="empty">No products match your search. Try another word — or message us, we'll find it for you.</div>
+<footer>Built · Ruled · Owned · Official King Kabriel's Empire store · &copy; King Kabriel's Empire</footer>
+
+<button class="support-btn" id="sb" aria-label="Chat with support">💬</button>
+<div class="support-panel" id="sp">
+  <div class="support-head"><div class="ava">K</div> King Kabriel Support <span style="margin-left:auto;font-size:11px;color:var(--muted)">online</span></div>
+  <div class="support-msgs" id="smsgs">
+    <div class="msg them">👑 Welcome to King Kabriel's Empire! Ask us anything — order help, refunds, product questions.</div>
+  </div>
+  <div class="support-input">
+    <input id="sinput" type="text" placeholder="Type a message…" autocomplete="off">
+    <button id="ssend">➤</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var q = document.getElementById('q');
+  var empty = document.getElementById('empty');
+  function apply(){
+    var term = (q.value||'').toLowerCase().trim();
+    var cat = (document.querySelector('.chip.active')||{}).dataset ? document.querySelector('.chip.active').dataset.filter : 'all';
+    var vis = 0;
+    cards.forEach(function(c){
+      var okCat = (cat === 'all' || c.dataset.cat === cat);
+      var okTerm = !term || (c.textContent||'').toLowerCase().indexOf(term) !== -1;
+      var show = okCat && okTerm;
+      c.style.display = show ? '' : 'none';
+      if (show) vis++;
+    });
+    empty.style.display = vis ? 'none' : 'block';
+  }
+  q.addEventListener('input', apply);
+  chips.forEach(function(ch){
+    ch.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      ch.classList.add('active');
+      apply();
+    });
+  });
+  // WhatsApp-style support chat — self-contained; stores history locally.
+  var msgs = document.getElementById('smsgs');
+  var input = document.getElementById('sinput');
+  var sb = document.getElementById('sb');
+  var sp = document.getElementById('sp');
+  sb.addEventListener('click', function(){ sp.classList.toggle('open'); if (sp.classList.contains('open')) input.focus(); });
+  function say(text, me){
+    var d = document.createElement('div');
+    d.className = 'msg ' + (me ? 'me' : 'them');
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function send(){
+    var t = (input.value||'').trim();
+    if (!t) return;
+    say(t, true);
+    input.value = '';
+    setTimeout(function(){
+      var a = t.toLowerCase();
+      if (a.indexOf('refund') !== -1) say('Your refund will be processed within 2–4 business days to your original payment method. For anything unusual, our team will reach you by email. 💛');
+      else if (a.indexOf('order') !== -1 || a.indexOf('track') !== -1 || a.indexOf('where') !== -1) say('You can track your order from your confirmation email, or tell us your order number here and we will check it right away. 📦');
+      else if (a.indexOf('size') !== -1 || a.indexOf('fit') !== -1) say('Each product page shows a size guide. If it still doesn't fit, we do easy exchanges — just message us! 👗');
+      else if (a.indexOf('return') !== -1) say('Returns are easy: message us your order number and the item, and we will send the return instructions within minutes. ↩️');
+      else if (a.indexOf('price') !== -1 || a.indexOf('discount') !== -1) say('Sign up to our list for member-only discounts. We also run trending deals every week — check the store homepage! 🏷️');
+      else if (a.indexOf('hello') !== -1 || a.indexOf('hi') !== -1) say('Hello! 👑 How can we help you today?');
+      else say('Thanks for your message! A member of the King Kabriel team will reply shortly. For urgent help, message us on WhatsApp. 💬');
+    }, 700);
+  }
+  document.getElementById('ssend').addEventListener('click', send);
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter') send(); });
+})();
+</script>
+</body>
+</html>
