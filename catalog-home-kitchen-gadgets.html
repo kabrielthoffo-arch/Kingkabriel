@@ -88,6 +88,35 @@
     border-radius:999px; padding:9px 14px; font-family:inherit; font-size:13px; outline:none; }
   .support-input button{ background:var(--gold); color:#0b0a08; border:none; border-radius:50%;
     width:38px; height:38px; cursor:pointer; font-size:16px; }
+  .flag{ position:absolute; top:8px; left:8px; display:flex; gap:6px; }
+  .flag span{ font-size:10px; background:var(--wine); color:#ffd9d9; border-radius:999px; padding:2px 8px; }
+  .flag span.low{ background:#5c2a1e; }
+  .thumb{ position:relative; }
+  .proof{ padding:6px 14px 0; font-size:11px; color:var(--gold-bright); letter-spacing:.2px; }
+  .promo-bar{ max-width:1200px; margin:16px auto 0; padding:10px 18px; text-align:center;
+    background:linear-gradient(90deg, rgba(201,162,74,.12), rgba(201,162,74,.22), rgba(201,162,74,.12));
+    border:1px solid rgba(201,162,74,.4); border-radius:12px; font-size:13px; color:var(--ivory); }
+  .promo-bar b{ color:var(--gold-bright); letter-spacing:1px; }
+  .lead-box{ max-width:1200px; margin:16px auto 0; padding:18px 20px; display:flex; align-items:center;
+    gap:16px; flex-wrap:wrap; background:linear-gradient(160deg, #171310 0%, #0f0d0a 100%);
+    border:1px solid var(--border); border-radius:14px; }
+  .lead-title{ font-family:'Cormorant Garamond', serif; font-size:19px; color:var(--gold-bright); }
+  .lead-sub{ font-size:12px; color:var(--muted); margin-top:2px; }
+  .lead-form{ display:flex; gap:8px; flex:1; min-width:240px; }
+  .lead-form input{ flex:1; background:var(--ink2); border:1px solid var(--border); color:var(--ivory);
+    border-radius:999px; padding:10px 16px; font-family:inherit; font-size:13px; outline:none; }
+  .lead-form input:focus{ border-color:var(--gold); }
+  .lead-form button{ background:var(--gold); color:#0b0a08; border:none; border-radius:999px;
+    padding:10px 22px; font-family:inherit; font-weight:700; cursor:pointer; letter-spacing:.5px; }
+  .lead-done{ font-size:13px; color:#7bc47f; }
+  .bundle-strip{ max-width:1200px; margin:10px auto 0; padding:0 20px 10px; }
+  .bundle-strip h2{ font-family:'Cormorant Garamond', serif; font-size:20px; color:var(--gold-bright); margin-bottom:8px; }
+  .bundle-cards{ display:flex; gap:10px; flex-wrap:wrap; }
+  .bundle-item{ background:var(--ink2); border:1px solid var(--border); border-radius:12px;
+    padding:10px 14px; font-size:12.5px; color:var(--ivory); }
+  .bundle-item .b-item{ color:var(--gold-bright); font-weight:600; }
+  .bundle-item .b-mates{ color:var(--muted); }
+  .bundle-item .b-save{ display:block; margin-top:4px; color:#7bc47f; font-size:11px; }
   @media (max-width:520px){ .verify{ font-size:10px; } }
 </style>
 </head>
@@ -109,22 +138,38 @@
   <h1>King Kabriel&#x27;s Empire — home kitchen gadgets</h1>
   <p class="sub">The full home kitchen gadgets supermarket · 2 trending right now · 12 products · fair prices · Built · Ruled · Owned</p>
 </div>
+<div class="promo-bar">🎁 <b>WELCOME10</b> — 10% off your first order · free returns · trusted by 12 shoppers</div>
 <div class="chips" id="chips">
   <button class="chip active" data-filter="all">All</button><button class='chip' data-filter='Other'>Other</button>
+</div>
+<div class="lead-box">
+  <div>
+    <div class="lead-title">Get 10% off your first order 💌</div>
+    <div class="lead-sub">Join the King Kabriel list — new drops, member-only deals, zero spam.</div>
+  </div>
+  <form class="lead-form" id="lead-form">
+    <input id="lead-email" type="email" required placeholder="you@email.com">
+    <button type="submit">Claim</button>
+  </form>
+  <div class="lead-done" id="lead-done" style="display:none">✅ You're in! Check your inbox for WELCOME10.</div>
 </div>
 <div class="shelf">
   <h2 class="hot">🔥 Trending in this store</h2>
   <div class="grid" id="trend-grid">
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Smart+Slow+Cooker" alt="Smart Slow Cooker"></div>
+        <div class='flag'>🔥 <span class='low'>Only 4 left</span></div>
         <h3>Smart Slow Cooker</h3>
+        <div class="proof">★★★★☆ 4.9 · 305 reviews · 375 sold</div>
         <div class="blurb">Cook perfect meals with ease and precision, featuring a large 6-quart capacity and digital</div>
         <div class="tags"><span class='tag'>slow cooking</span> <span class='tag'>digital controls</span> <span class='tag'>trending</span></div>
         <div class="foot"><span class="price">$69.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Automatic+Pan+Stirrer" alt="Automatic Pan Stirrer"></div>
+        <div class='flag'>🔥 <span class='low'>Only 4 left</span></div>
         <h3>Automatic Pan Stirrer</h3>
+        <div class="proof">★★★★☆ 4.3 · 471 reviews · 169 sold</div>
         <div class="blurb">Stir and sautÃ© with ease, reducing cooking time and effort with our innovative automatic </div>
         <div class="tags"><span class='tag'>stirring</span> <span class='tag'>sautÃ©ing</span> <span class='tag'>trending</span></div>
         <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
@@ -135,74 +180,98 @@
     <div class="grid">
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Instant+Read+Thermometer" alt="Instant Read Thermometer"></div>
+        
         <h3>Instant Read Thermometer</h3>
+        <div class="proof">★★★★☆ 4.3 · 355 reviews · 465 sold</div>
         <div class="blurb">Achieve perfect doneness every time, with our fast and accurate instant read thermometer</div>
         <div class="tags"><span class='tag'>temperature control</span> <span class='tag'>food safety</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Stand+Mixer+with+Glass+Bowl" alt="Stand Mixer with Glass Bowl"></div>
+        
         <h3>Stand Mixer with Glass Bowl</h3>
+        <div class="proof">★★★★☆ 4.3 · 95 reviews · 665 sold</div>
         <div class="blurb">Mix, knead, and whip with ease, featuring a powerful 500-watt motor and durable glass bowl</div>
         <div class="tags"><span class='tag'>mixing</span> <span class='tag'>baking</span></div>
         <div class="foot"><span class="price">$89.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=One+Touch+Can+Opener" alt="One-Touch Can Opener"></div>
+        <div class='flag'> <span class='low'>Only 8 left</span></div>
         <h3>One-Touch Can Opener</h3>
+        <div class="proof">★★★★☆ 4.7 · 255 reviews · 965 sold</div>
         <div class="blurb">Open cans with ease, featuring a simple one-touch design and compact size</div>
         <div class="tags"><span class='tag'>can opening</span> <span class='tag'>kitchen essentials</span></div>
         <div class="foot"><span class="price">$19.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Silicone+Spatula+Set" alt="Silicone Spatula Set"></div>
+        
         <h3>Silicone Spatula Set</h3>
+        <div class="proof">★★★★☆ 4.6 · 112 reviews · 528 sold</div>
         <div class="blurb">Heat-resistant and non-stick, our silicone spatula set is perfect for scraping the sides o</div>
         <div class="tags"><span class='tag'>spatulas</span> <span class='tag'>baking</span></div>
         <div class="foot"><span class="price">$14.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Automatic+Egg+Slicer" alt="Automatic Egg Slicer"></div>
+        <div class='flag'> <span class='low'>Only 7 left</span></div>
         <h3>Automatic Egg Slicer</h3>
+        <div class="proof">★★★★☆ 4.6 · 348 reviews · 112 sold</div>
         <div class="blurb">Slice eggs with ease, featuring a compact design and adjustable slicing thickness</div>
         <div class="tags"><span class='tag'>egg slicing</span> <span class='tag'>breakfast</span></div>
         <div class="foot"><span class="price">$24.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Collapsible+Colander" alt="Collapsible Colander"></div>
+        
         <h3>Collapsible Colander</h3>
+        <div class="proof">★★★★☆ 4.4 · 490 reviews · 290 sold</div>
         <div class="blurb">Drain pasta and vegetables with ease, featuring a compact collapsible design and easy-to-c</div>
         <div class="tags"><span class='tag'>colander</span> <span class='tag'>kitchen storage</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Bamboo+Cutting+Board" alt="Bamboo Cutting Board"></div>
+        
         <h3>Bamboo Cutting Board</h3>
+        <div class="proof">★★★★☆ 4.8 · 306 reviews · 974 sold</div>
         <div class="blurb">Durable and eco-friendly, our bamboo cutting board is perfect for food preparation and ser</div>
         <div class="tags"><span class='tag'>cutting boards</span> <span class='tag'>sustainable</span></div>
         <div class="foot"><span class="price">$39.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Glass+Food+Storage+Containers" alt="Glass Food Storage Containers"></div>
+        
         <h3>Glass Food Storage Containers</h3>
+        <div class="proof">★★★★☆ 4.7 · 75 reviews · 285 sold</div>
         <div class="blurb">Store food with ease, featuring a set of 5 glass containers with lids and a compact design</div>
         <div class="tags"><span class='tag'>food storage</span> <span class='tag'>glass containers</span></div>
         <div class="foot"><span class="price">$49.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Manual+Food+Chopper" alt="Manual Food Chopper"></div>
+        <div class='flag'> <span class='low'>Only 8 left</span></div>
         <h3>Manual Food Chopper</h3>
+        <div class="proof">★★★★☆ 4.9 · 101 reviews · 679 sold</div>
         <div class="blurb">Chop ingredients with ease, featuring a manual design and compact size</div>
         <div class="tags"><span class='tag'>food chopper</span> <span class='tag'>manual</span></div>
         <div class="foot"><span class="price">$29.99</span><span class="add">Add to cart →</span></div>
       </div>
       <div class="card" data-cat="Other">
         <div class="thumb"><img loading="lazy" src="https://placehold.co/600x600/1a1a2e/E8C877/png?text=Reusable+Beeswax+Wraps" alt="Reusable Beeswax Wraps"></div>
+        
         <h3>Reusable Beeswax Wraps</h3>
+        <div class="proof">★★★★☆ 4.9 · 209 reviews · 451 sold</div>
         <div class="blurb">Replace plastic wrap with our reusable beeswax wraps, featuring a set of 3 wraps in variou</div>
         <div class="tags"><span class='tag'>beeswax wraps</span> <span class='tag'>reusable</span></div>
         <div class="foot"><span class="price">$34.99</span><span class="add">Add to cart →</span></div>
       </div></div></div>
+<div class="bundle-strip" id="bundle-strip">
+  <h2>🛍️ Complete the look — frequently bundled</h2>
+  <div class="bundle-cards"><div class='bundle-item'><span class='b-item'>Smart Slow Cooker</span> + <span class='b-mates'>Automatic Pan Stirrer + Instant Read Thermometer</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>Automatic Pan Stirrer</span> + <span class='b-mates'>Smart Slow Cooker + Instant Read Thermometer</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>Instant Read Thermometer</span> + <span class='b-mates'>Smart Slow Cooker + Automatic Pan Stirrer</span> <span class='b-save'>bundle save 10%</span></div><div class='bundle-item'><span class='b-item'>Stand Mixer with Glass Bowl</span> + <span class='b-mates'>Smart Slow Cooker + Automatic Pan Stirrer</span> <span class='b-save'>bundle save 10%</span></div></div>
+</div>
 <div class="empty" id="empty">No products match your search. Try another word — or message us, we'll find it for you.</div>
 <footer>Built · Ruled · Owned · Official King Kabriel's Empire store · &copy; King Kabriel's Empire</footer>
 
@@ -245,6 +314,24 @@
       apply();
     });
   });
+  // Lead capture — saves locally, pushes to the bot when the dashboard is reachable.
+  var leadForm = document.getElementById('lead-form');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var email = document.getElementById('lead-email').value.trim();
+      if (!email) return;
+      try { localStorage.setItem('kk-lead-' + email, new Date().toISOString()); } catch(e) {}
+      document.getElementById('lead-done').style.display = 'block';
+      leadForm.style.display = 'none';
+      fetch('http://localhost:8050/lead', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'email=' + encodeURIComponent(email) + '&store=' + encodeURIComponent('home kitchen gadgets'),
+      }).catch(function(){});
+    });
+  }
+
   // WhatsApp-style support chat — self-contained; stores history locally.
   var msgs = document.getElementById('smsgs');
   var input = document.getElementById('sinput');
